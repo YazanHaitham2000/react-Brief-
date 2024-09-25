@@ -5,9 +5,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="author" content="CodeHim">
       <title> Dashboard Profile Page Theme Color CSS Vanilla JS Example </title>
-      <!-- Style CSS -->
       <link rel="stylesheet" href="./assets/css/user_style.css">
-      <!-- Demo CSS (No need to include it into your project) -->
       <link rel="stylesheet" href="./assets/css/user_demo.css">
       <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600&display=swap" rel="stylesheet">
    </head>
