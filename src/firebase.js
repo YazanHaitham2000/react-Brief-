@@ -1,18 +1,19 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore"; // Import Firestore
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyAaL5RoWb18KI6TL7EelAvx1gejKz_das4",
-    authDomain: "courses-contract-c710c.firebaseapp.com",
-    projectId: "courses-contract-c710c",
-    storageBucket: "courses-contract-c710c.appspot.com",
-    messagingSenderId: "605989031837",
-    appId: "1:605989031837:web:d90bd0db052b3b028aa974",
-};
+    apiKey: "AIzaSyDjinZw8F4QK6dajA-7VQOsp7aqPgxNPCA",
+    authDomain: "reactbreif.firebaseapp.com",
+    projectId: "reactbreif",
+    storageBucket: "reactbreif.appspot.com",
+    messagingSenderId: "377045064095",
+    appId: "1:377045064095:web:d4142d47f1f5173631c5aa"
+  };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
+  const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const db = getFirestore(app); // Initialize Firestore
 
+export { auth, db }; // Export the Firestore instance
 export default auth;

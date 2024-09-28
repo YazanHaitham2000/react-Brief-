@@ -1,0 +1,21 @@
+/* Style for the login page only */
+.login-page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f7f7f7;
+}
+
+.card {
+  width: 350px;
+}
+
+.w-100 {
+  display: block;
+  width: 100%;
+}
+
+.text-center {
+  text-align: center;
+}

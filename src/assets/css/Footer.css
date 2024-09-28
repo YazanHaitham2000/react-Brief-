@@ -1,0 +1,35 @@
+body {
+  width: 100vw;
+}
+
+.myFooter {
+  width: 100vw;
+  background: #4255A4 !important;
+  color: white !important;
+  bottom: 0;
+  padding-top: 1vh;
+  color: white;
+}
+
+.myFooter img {
+  width: 50% !important;
+  height: 50% !important;
+}
+
+.footer-logo {
+  width: 150px;
+  height: auto;
+}
+
+.myFooter a {
+  color: white !important; /* Make all links white */
+  font-size: 18px; /* Adjust the font size if needed */
+}
+
+.myFooter a:hover {
+  color: lightgray !important; /* Change color on hover */
+}
+
+.myFooter .icon-size {
+  font-size: 24px !important; /* Make the icons larger */
+}

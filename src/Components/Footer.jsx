@@ -1,108 +1,55 @@
-<footer>
-    <div class="footer-wrappper footer-bg">
-      <!-- Footer Start-->
-      <div class="footer-area footer-padding">
-        <div class="container">
-          <div class="row justify-content-between">
-            <div class="col-xl-4 col-lg-5 col-md-4 col-sm-6">
-              <div class="single-footer-caption mb-50">
-                <div class="single-footer-caption mb-30">
-                  <!-- logo -->
-                  <div class="footer-logo mb-25">
-                    <a href="index.html"
-                      ><img src="assets/img/logo/logo2_footer.png" alt=""
-                    /></a>
-                  </div>
-                  <div class="footer-tittle">
-                    <div class="footer-pera">
-                      <p>
-                        The automated process starts as soon as your clothes
-                        go into the machine.
-                      </p>
-                    </div>
-                  </div>
-                  <!-- social -->
-                  <div class="footer-social">
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="https://bit.ly/sai4ull"
-                      ><i class="fab fa-facebook-f"></i
-                    ></a>
-                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                  </div>
+import React from 'react';
+import { MDBFooter, MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdb-react-ui-kit';
+import '../assets/css/Footer.css';
+
+const Footer = () => {
+  return (
+    <MDBFooter bgColor='light' className='text-center text-lg-start text-muted myFooter'>
+      <section className=''>
+        <MDBContainer className='text-center text-md-start mt-5'>
+          <MDBRow className='mt-3'>
+            <MDBCol md='3' lg='4' xl='3' className='mx-auto mb-4'>
+              <h6 className='text-uppercase fw-bold mb-4'>
+                <img src="src/assets/img/logo/logo.png" alt="" />
+                <div className="mt-5">
+                  <a href='' className='me-4 text-reset'>
+                    <MDBIcon fab icon='facebook-f' className="icon-size" />
+                  </a>
+                  <a href='' className='me-4 text-reset'>
+                    <MDBIcon fab icon='twitter' className="icon-size" />
+                  </a>
+                  <a href='' className='me-4 text-reset'>
+                    <MDBIcon fab icon='google' className="icon-size" />
+                  </a>
+                  <a href='' className='me-4 text-reset'>
+                    <MDBIcon fab icon='instagram' className="icon-size" />
+                  </a>
                 </div>
-              </div>
-            </div>
-            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-5">
-              <div class="single-footer-caption mb-50">
-                <div class="footer-tittle">
-                  <h4>Our solutions</h4>
-                  <ul>
-                    <li><a href="#">Design & creatives</a></li>
-                    <li><a href="#">Telecommunication</a></li>
-                    <li><a href="#">Restaurant</a></li>
-                    <li><a href="#">Programing</a></li>
-                    <li><a href="#">Architecture</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-2 col-lg-4 col-md-4 col-sm-6">
-              <div class="single-footer-caption mb-50">
-                <div class="footer-tittle">
-                  <h4>Support</h4>
-                  <ul>
-                    <li><a href="#">Design & creatives</a></li>
-                    <li><a href="#">Telecommunication</a></li>
-                    <li><a href="#">Restaurant</a></li>
-                    <li><a href="#">Programing</a></li>
-                    <li><a href="#">Architecture</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
-              <div class="single-footer-caption mb-50">
-                <div class="footer-tittle">
-                  <h4>Company</h4>
-                  <ul>
-                    <li><a href="#">Design & creatives</a></li>
-                    <li><a href="#">Telecommunication</a></li>
-                    <li><a href="#">Restaurant</a></li>
-                    <li><a href="#">Programing</a></li>
-                    <li><a href="#">Architecture</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- footer-bottom area -->
-      <div class="footer-bottom-area">
-        <div class="container">
-          <div class="footer-border">
-            <div class="row d-flex align-items-center">
-              <div class="col-xl-12">
-                <div class="footer-copy-right text-center">
-                  <p>
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    Copyright &copy;
-                    <script>
-                      document.write(new Date().getFullYear());
-                    </script>
-                    All rights reserved | This template is made with
-                    <i class="fa fa-heart" aria-hidden="true"></i> by
-                    <a href="https://colorlib.com" target="_blank"
-                      >Colorlib</a
-                    >
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Footer End-->
-    </div>
-  </footer>
+              </h6>
+            </MDBCol>
+
+            <MDBCol md='4' lg='3' xl='3' className='mx-auto mb-md-0 mb-4'>
+              <h6 className='text-uppercase fw-bold mb-4' style={{ fontSize : "2rem" }}>Contact</h6>
+              <p  style={{ color : "white" }}>
+                <MDBIcon icon='home' className='me-2 icon-size'  style={{ color : "white" }}/>
+                New York, NY 10012, US
+              </p>
+              <p  style={{ color : "white" }}>
+                <MDBIcon icon='envelope' className='me-3 icon-size'  style={{ color : "white" }}/>
+                info@example.com
+              </p>
+              <p  style={{ color : "white" }}>
+                <MDBIcon icon='phone' className='me-3 icon-size' style={{ color : "white" }} /> + 01 234 567 88
+              </p>
+              <p  style={{ color : "white" }}>
+                <MDBIcon icon='print' className='me-3 icon-size' style={{ color : "white" }} /> + 01 234 567 89
+              </p>
+            </MDBCol>
+          </MDBRow>
+        </MDBContainer>
+      </section>
+    </MDBFooter>
+  );
+}
+
+export default Footer;
