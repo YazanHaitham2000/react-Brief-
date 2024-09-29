@@ -17,6 +17,9 @@ const Profile = () => {
         phone: '',
     });
 
+    
+  
+
     const [coursesData, setCoursesData] = useState([]);
     const [allCourses, setAllCourses] = useState([]); // State to hold all available courses
     const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -27,7 +30,11 @@ const Profile = () => {
     // Fetch user data from Firestore
     useEffect(() => {
         const fetchUser = async () => {
-            const userId = 'Ha6ncx164GbU3nT7THMtCVwM8M93';
+
+            const storedData = localStorage.getItem('auth');
+            const parsedData = JSON.parse(storedData);
+            const userId = parsedData.uid;
+
             const userDoc = await getDoc(doc(db, "users", userId));
             if (userDoc.exists()) {
                 const userData = userDoc.data();
@@ -56,7 +63,7 @@ const Profile = () => {
 // Fetch user's subscribed courses where status is 'accepted'
 useEffect(() => {
     const fetchCourses = async () => {
-        const userID = 'Ha6ncx164GbU3nT7THMtCVwM8M93';
+                   const storedData = localStorage.getItem('auth');
         const subscriptionsCol = collection(db, 'subscriptions');
         const q = query(
             subscriptionsCol, 
@@ -119,7 +126,7 @@ useEffect(() => {
     // Handle form submission for new subscription
     const handleCreateSubscription = async (e) => {
         e.preventDefault();
-        const userID = 'Ha6ncx164GbU3nT7THMtCVwM8M93';
+                    const parsedData = JSON.parse(storedData);
 
         try {
             // Add new subscription to Firestore
@@ -146,7 +153,7 @@ useEffect(() => {
     // Handle form submission for profile update
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const userId = 'Ha6ncx164GbU3nT7THMtCVwM8M93';
+                    const userId = parsedData.uid;
 
         await updateDoc(doc(db, "users", userId), {
             name: user.name,
