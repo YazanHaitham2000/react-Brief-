@@ -1,45 +1,104 @@
-body {
-    margin: 0;
-    display: flex;
-    place-items: center;
-    min-width: 320px;
-    min-height: 100vh;
-  }
-  
-  h1 {
-    font-size: 3.2em;
-    line-height: 1.1;
-  }
-  
-  button {
-    border-radius: 8px;
-    border: 1px solid transparent;
-    padding: 0.6em 1.2em;
-    font-size: 1em;
-    font-weight: 500;
-    font-family: inherit;
-    background-color: #1a1a1a;
-    cursor: pointer;
-    transition: border-color 0.25s;
-  }
-  button:hover {
-    border-color: #646cff;
-  }
-  button:focus,
-  button:focus-visible {
-    outline: 4px auto -webkit-focus-ring-color;
-  }
-  
-  @media (prefers-color-scheme: light) {
-    :root {
-      color: #213547;
-      background-color: #ffffff;
-    }
-    a:hover {
-      color: #747bff;
-    }
-    button {
-      background-color: #f9f9f9;
-    }
-  }
-  
+/* General Navbar Styling */
+.main-header {
+  background: linear-gradient(to bottom, #c054ff 0%, #5274ff 100%);
+  color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  height: 70px; /* Fixed height for the navbar */
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.myNav {
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.myNav img {
+  height: 40px; /* Adjust logo size */
+}
+
+/* Profile Dropdown Styling */
+.profile-out {
+  position: relative;
+}
+
+.profile-toggle {
+  color: white;
+  font-size: 1.7rem;
+  font-weight: 600;
+  background: none;
+  padding: 8px 15px;
+}
+
+.profile-toggle:hover {
+  background: rgba(255, 255, 255, 0.2); /* Hover effect for profile button */
+}
+
+.profile-out .dropdown-menu {
+  background-color: #ff9f67; /* Dropdown background to match the gradient */
+  padding: 0;
+  transform: translateY(10px);
+}
+
+.dropdown-item {
+  padding: 10px 20px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s ease;
+}
+
+.dropdown-item svg {
+  margin-left: 10px;
+}
+
+.dropdown-item:hover {
+  background-color: #c054ff; /* Matching hover effect */
+  color: white;
+}
+
+/* Hover Effects */
+.profile-out .dropdown-item:hover {
+  background-color: #c054ff;
+}
+
+/* Navbar Button Styles */
+.first {
+  background: linear-gradient(to bottom, #c054ff 0%, #5274ff 100%);
+  padding: 10px 15px;
+  color: white;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 2px;
+  transition: background 0.3s ease;
+  border: 1px solid #c054ff ;
+}
+
+.first:hover {
+  background: #FF9F67;
+}
+
+/* Padding adjustments for proper spacing */
+.nav-link {
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: 600;
+}
+.item {
+  font-size: 1.5rem;
+  background-color: #5274ff !important;
+  color: white !important;
+  transition: background 0.3s ease;
+}
+
+.item:hover {
+  background-color: #c054ff !important; /* Slightly darker shade on hover */
+}

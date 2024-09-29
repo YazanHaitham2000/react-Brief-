@@ -5,6 +5,7 @@ import Login from "./Pages/Login.jsx";
 import Register from "./Pages/Register.jsx";
 import ForgetPassword from "./Pages/ForgetPassword.jsx";
 import RedirectIfLoggedIn from "./Components/auth/RedirectIfLoggedIn.jsx"
+import UserProfile from "./Pages/profile.jsx";
 function App() {
   const router = createBrowserRouter([
 
@@ -34,6 +35,10 @@ function App() {
         <ForgetPassword />
       </RedirectIfLoggedIn> ,
     },
+    {
+      path: "/user_profile",
+      element: <UserProfile />,
+  },
     
    
   ]);

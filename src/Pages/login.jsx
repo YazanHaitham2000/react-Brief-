@@ -34,7 +34,11 @@ function Login() {
 
         dispatch({
           type: "LOGIN",
-          payload: { ...user, role: docSnap.data().role },
+          payload: {
+            ...user,
+            role: docSnap.data().role,
+            name: docSnap.data().name,
+          },
         });
 
         if (docSnap.data().role === "user") {
@@ -49,7 +53,7 @@ function Login() {
   };
 
   return (
-    <div className="login-page"> {/* Add a unique class */}
+    <div className="login-page" style={{ marginLeft : "500px" }}>
       <Card>
         <Card.Body>
           <h2 className="text-center mb-4">Log In</h2>
@@ -101,12 +105,12 @@ function Login() {
           </Form>
           <div className="w-100 text-center mt-3">
             <Link to="/ForgetPassword">Forgot Password?</Link>
+            <div>
+              Need an account? <Link to="/register">Sign Up</Link>
+            </div>
           </div>
         </Card.Body>
       </Card>
-      <div className="w-100 text-center mt-2">
-        Need an account? <Link to="/register">Sign Up</Link>
-      </div>
     </div>
   );
 }

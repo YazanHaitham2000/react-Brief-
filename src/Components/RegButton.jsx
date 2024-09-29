@@ -1,9 +1,18 @@
-import react from 'react';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const RegButton = () => {
-  return (
-<button className="fill first">register</button>
-  )
-}
+  const navigate = useNavigate(); // Hook to programmatically navigate
 
-export default RegButton
+  const handleRegisterClick = () => {
+    navigate('/register'); // Navigate to the register page
+  };
+
+  return (
+    <button className="fill first" onClick={handleRegisterClick}>
+      Register
+    </button>
+  );
+};
+
+export default RegButton;

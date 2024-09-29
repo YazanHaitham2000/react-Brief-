@@ -6,6 +6,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
 import { doc, setDoc } from "firebase/firestore";
 import { db } from "../firebase";
+import "./Register.css"
 
 function Register() {
   const {
@@ -17,13 +18,11 @@ function Register() {
   const navigate = useNavigate();
   const [error, setError] = useState("");
 
-  // Watch the password field value
   const password = watch("password");
 
   const onSubmit = async (data) => {
     createUserWithEmailAndPassword(auth, data.email, data.password)
       .then((userCredential) => {
-        // Signed up
         const user = userCredential.user;
         return user;
       })
@@ -31,20 +30,20 @@ function Register() {
         setDoc(doc(db, "users", user.uid), {
           userid: user.uid,
           email: user.email,
-          role:"user"
+          role: "user",
         });
       })
       .then(() => {
-        // Redirect to login after signup
         navigate("/login");
       })
       .catch((error) => {
-        setError(error);
+        setError(error.message);
       });
   };
 
   return (
-    <>
+    <div className="register-page" style={{ marginLeft : "500px" }}>
+      {/* Centering the card on the page */}
       <Card>
         <Card.Body>
           <h2 className="text-center mb-4">Sign Up</h2>
@@ -58,7 +57,8 @@ function Register() {
                 {...register("email", {
                   required: "Email is required",
                   pattern: {
-                    value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
+                    value:
+                      /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
                     message: "Enter a valid email address",
                   },
                 })}
@@ -116,14 +116,13 @@ function Register() {
             <Button className="w-100 mt-3" type="submit">
               Sign Up
             </Button>
+            <div className="w-100 text-center mt-2">
+              Already have an account? <Link to="/login">Log In</Link>
+            </div>
           </Form>
         </Card.Body>
       </Card>
-
-      <div className="w-100 text-center mt-2">
-        Already have an account? <Link to="/login">Log In</Link>
-      </div>
-    </>
+    </div>
   );
 }
 

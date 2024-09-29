@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../../utils/context/AuthContext";
+import ProfileOut from "../ProfileOut.jsx";
 
 const Logout = ({ children }) => {
   const { currentUser, dispatch } = useContext(AuthContext);
@@ -15,9 +16,7 @@ const Logout = ({ children }) => {
   };
 
   return currentUser ? (
-    <button className="btn btn-danger" onClick={logout}>
-      Logout
-    </button>
+   <ProfileOut fin = {logout} />
   ) : (
     children
   );

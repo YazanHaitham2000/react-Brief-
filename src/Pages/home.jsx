@@ -4,10 +4,14 @@ import AboutSection from "../Components/AboutSection";
 import LearnerOutcomes from "../Components/LearnerOutcomes";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
+import HeaderLogged from "../Components/HeaderLogged";
+import Logout from "../Components/auth/Logout"
 function Home() {
   return (
     <div>
+      <Logout>
       <Header />
+      </Logout>
       <HeroSection />
       <CoursesSection />
       <AboutSection />

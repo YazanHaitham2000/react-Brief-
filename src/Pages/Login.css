@@ -1,14 +1,18 @@
-/* Style for the login page only */
 .login-page {
-  height: 100vh;
+  height: 100vh; /* Ensure the container takes up the full viewport height */
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; /* Horizontally center the card */
+  align-items: center; /* Vertically center the card */
   background-color: #f7f7f7;
+  padding: 20px;
+  font-size: 1.5rem;
 }
 
 .card {
-  width: 350px;
+  width: 100%; /* Ensure the card takes up available space */
+  max-width: 400px; /* Limit the card width */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
 
 .w-100 {
@@ -18,4 +22,20 @@
 
 .text-center {
   text-align: center;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.mt-3 {
+  margin-top: 20px !important;
+}
+
+.mt-2 {
+  margin-top: 10px !important;
+}
+
+.card-body {
+  padding: 30px;
 }

@@ -23,7 +23,7 @@ const HeroSection = () => {
           <Grid item xs={12} md={6}>
             <Typography
               variant="h2"
-              sx={{ fontWeight: "bold", marginBottom: 2, lineHeight: 1.2 }}
+              sx={{ fontWeight: "bold", marginBottom: 2, lineHeight: 1.2 , color : "white" }}
             >
               Online learning <br /> platform
             </Typography>

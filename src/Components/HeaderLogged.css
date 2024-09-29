@@ -1,0 +1,104 @@
+.main-header {
+    background: linear-gradient(to bottom, #c054ff 0%, #5274ff 100%);
+    width: 100vw;  
+    color:white;
+    display: flex;
+    position: fixed;
+    top: 0;
+    font-weight:600;
+  }
+  
+  
+  .myNav, .myNav *{
+    color:white !important;
+    height:12vh;
+  }
+  
+  .myNav img {
+    /* width: 50% !important; */
+    height: 3.5vh !important;
+  } 
+  
+  .fill {
+    position: relative;
+    display:block;
+    height: 45px;
+    width: 108px;
+    padding: 38px;
+    margin: 10px 7px;
+    padding: 5px 5px;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 2px;
+    color: #383736;
+    border-radius: 4px;
+    /* text-transform: uppercase; */
+    outline: none;
+    overflow: hidden;
+    background: none;
+    z-index: 1;
+    cursor: pointer;
+    transition: 0.08s ease-in;
+    -o-transition: 0.08s ease-in;
+    -ms-transition: 0.08s ease-in;
+    -moz-transition: 0.08s ease-in;
+    -webkit-transition: 0.08s ease-in;
+    border: none; /* Add this to remove any border */
+  outline: none; 
+  }
+  
+  .fill:hover {
+    color: whitesmoke;
+    outline: none;
+  }
+  
+  .fill:before {
+    content: "";
+    position: absolute;
+    /* background: #383736; */
+    background: #FF9F67;
+    bottom: 0;
+    right: 100%;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    transition: right 0.3s ease-in;
+    -webkit-transition: right 0.3s ease-in;
+  }
+  
+  .fill:hover:before {
+    right: 0;
+  } 
+  
+  .first {
+    background: linear-gradient(to bottom, #c054ff 0%, #5274ff 100%);
+    background-clip: border-box;
+    /* Ensures gradient is clipped to the border */
+    border: none;
+    /* Remove border to avoid unwanted colors */
+    padding: 0;
+    /* Remove padding that may create extra space */
+    height: 45px;
+    width: 108px;
+    color: white;
+    /* Ensure text color remains white */
+    border-radius: 4px;
+    /* Keep border-radius for rounded corners */
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 2px;
+  }
+  
+  .first {
+    background: #FF9F67;
+  }
+  
+  .first:before {
+    background-color: #AE59FF;
+    background: linear-gradient(to bottom, #c054ff 0%, #be4eff 100%);
+  }
+  
+  .second {
+      outline: none; /* or just remove the entire property */
+  }
+      

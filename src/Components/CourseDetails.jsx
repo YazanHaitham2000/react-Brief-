@@ -7,7 +7,7 @@ const CourseDetails = ({ course, onClose }) => {
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-        <button className="close-modal" onClick={onClose}>X</button>
+        <button className="close-modal" onClick={onClose} style={{ backgroundColor :"white", marginRight : "10px" , marginTop : "2px"}}>X</button>
         <img src={course.course_image} alt={course.course_name} />
         <h2>{course.course_name}</h2>
         <p><strong>Teacher:</strong> {course.course_teacher}</p>

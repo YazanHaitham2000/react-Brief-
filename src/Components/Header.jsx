@@ -6,7 +6,6 @@ import Navbar from 'react-bootstrap/Navbar';
 import RegButton from './RegButton';
 import LogButton from './LogButton';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import '../assets/css/Navbar.css';
 import './navbar.css';
 
 const Header = () => {
@@ -18,10 +17,10 @@ const Header = () => {
         </Navbar.Brand>
 
         <Nav className="d-flex align-items-center gap-4">
-          <Nav.Link as={Link} to="/" className="d-flex align-items-center" style={{ fontSize: '15px' }}>
+          <Nav.Link as={Link} to="/" className="d-flex align-items-center" style={{ fontSize: '15px' , color : "white" }}>
             Home
           </Nav.Link>
-          <Nav.Link as={Link} to="/Courses" className="d-flex align-items-center" style={{ fontSize: '15px' }}>
+          <Nav.Link as={Link} to="/Courses" className="d-flex align-items-center" style={{ fontSize: '15px' , color : "white"}}>
             Courses
           </Nav.Link>
           <RegButton />

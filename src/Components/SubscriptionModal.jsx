@@ -1,30 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { db } from '../firebase'; // Import Firestore instance
-import { collection, addDoc } from 'firebase/firestore'; // For saving credit card info
+import { collection, addDoc } from 'firebase/firestore'; // For saving data
 import '../assets/css/SubscriptionModal.css';
 
-const SubscriptionModal = ({ course, onClose }) => {
+const SubscriptionModal = ({ course, user, onClose }) => {
   const [creditCard, setCreditCard] = useState({
     card_holder_name: '',
     card_number: '',
     cvv: '',
     expiry_date: ''
   });
-
-  const [user, setUser] = useState({
-    name: '',
-    userid: ''
-  });
-
-  useEffect(() => {
-    // Retrieve the user's name and ID from localStorage
-    const userName = localStorage.getItem('user_name');
-    const userId = localStorage.getItem('user_id');
-    
-    if (userName && userId) {
-      setUser({ name: userName, userid: userId });
-    }
-  }, []);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -37,29 +22,55 @@ const SubscriptionModal = ({ course, onClose }) => {
       return;
     }
 
+    // Check if course.id exists and log it
+    console.log("Course object:", course);
+    if (!course.id) {
+      console.error("Course ID is missing or undefined.");
+      alert("Course ID is missing!");
+      return;
+    }
+
     try {
       // Add credit card info to Firebase under `credit_card` collection
-      await addDoc(collection(db, 'credit_card'), {
+      const creditCardData = {
         ...creditCard,
-        user_name: user.name, // Associate with the user directly
-        user_id: user.userid // Assuming you have `userid` field for user identification
-      });
-      alert('Credit Card Info Saved Successfully!');
+        courseID: course.id,  // Use the document ID from Firestore
+        user_name: user.name,  // Associate with the user directly
+        user_id: user.userid,  // Assuming you have `userid` field for user identification
+        status: 'pending',     // Add status field
+        created_at: new Date()  // Add timestamp
+      };
+
+      console.log("Credit Card Data Payload:", creditCardData);  // Log data before sending
+      await addDoc(collection(db, 'credit_card'), creditCardData);
+
+      // Now create a subscription in the `subscriptions` collection
+      const subscriptionData = {
+        courseID: course.id,   // Use the course document ID
+        userID: user.userid,   // Associate it with the user's ID
+        status: 'pending',     // Set initial status of the subscription
+        subscription_date: new Date()  // Timestamp
+      };
+
+      console.log("Subscription Data Payload:", subscriptionData);  // Log data before sending
+      await addDoc(collection(db, 'subscriptions'), subscriptionData);
+
+      alert('Credit Card Info and Subscription Saved Successfully!');
     } catch (error) {
-      console.error('Error saving credit card info: ', error);
+      console.error('Error saving credit card info or subscription:', error.message);
+      alert('Error saving data: ' + error.message);
     }
 
     onClose(); // Close the modal after saving
   };
 
-  if (!course || !user.name) return null; // Don't show the modal if data is missing
+  if (!course || !user) return null; // Don't show the modal if data is missing
 
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-        <button className="close-modal" onClick={onClose}>X</button>
+        <button className="close-modal" onClick={onClose} style={{ color : "black" }}>X</button>
         <h2>Subscription Details</h2>
-        <p><strong>User Name:</strong> {user.name}</p>
         <p><strong>Course Name:</strong> {course.course_name}</p>
         <p><strong>Course Duration:</strong> {course.course_duration} days</p>
         <p><strong>Total Cost:</strong> {course.total_cost} $</p>
