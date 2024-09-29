@@ -1,8 +1,9 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Courses from "./Pages/Courses.jsx";
 import Home from "./Pages/Home.jsx";
-import Login from "./Pages/Login.jsx";
-import Register from "./Pages/Register.jsx";
+import Login from "./Components/login.jsx";
+import Register from "./Components/register.jsx";
+
 import ForgetPassword from "./Pages/ForgetPassword.jsx";
 import RedirectIfLoggedIn from "./Components/auth/RedirectIfLoggedIn.jsx"
 import UserProfile from "./Pages/profile.jsx";
